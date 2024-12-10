@@ -2,6 +2,8 @@
 
 SimpleBaiduNav 是一个用于导航和管理收藏链接的项目。该项目包含多个 HTML、CSS 和 JavaScript 文件，旨在提供一个用户友好的界面。 
 
+[Demo](https://owenlsa.github.io/SimpleBaiduNav/)
+
 ## 项目结构
 ```
 SimpleBaiduNav/
