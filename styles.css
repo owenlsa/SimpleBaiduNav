@@ -1,0 +1,236 @@
+/* 重置所有元素的内边距和外边距 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 设置body的文本居中和相对定位 */
+body {
+    text-align: center;
+    position: relative;
+}
+
+/* 设置body的背景图片和模糊效果 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-image) no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+/* 设置图片的大小和动画效果 */
+img.smaller {
+    width: 198px;
+    height: 65px;
+    max-width: 250px;
+    animation: flipInX 1.0s;
+    -webkit-animation: flipInX 1.0s;
+}
+
+/* 设置logo的样式和悬停效果 */
+.logo {
+    font-size: 2em;
+    white-space: normal;
+    word-wrap: break-word;
+    text-decoration: none;
+    color: #232323;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), filter 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(51, 136, 255, 0.5));
+}
+
+/* 设置搜索输入框的样式 */
+#search_input {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    font-size: 18px;
+    color: #696969;
+    padding: 0 20px;
+    border-radius: 100px;
+}
+
+/* 设置搜索部分的外边距 */
+.search_part {
+    margin-bottom: 30px;
+    margin-top: 130px;
+}
+
+/* 设置span的样式 */
+span {
+    display: block;
+    overflow: hidden;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+/* 设置搜索栏的样式和动画效果 */
+.search_bar {
+    box-shadow: 0 0 18px rgba(70, 70, 40, .255);
+    -webkit-animation: fadeIn 1.0s;
+    animation: fadeIn 1.0s;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    display: table;
+    vertical-align: middle;
+    width: 80%;
+    height: 50px;
+    max-width: 400px;
+    margin: 10px auto;
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), filter 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.search_bar:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(70, 70, 40, .255));
+}
+
+/* 设置搜索提交按钮的样式 */
+#search_submit {
+    outline: 0;
+    height: 50px;
+    float: right;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    padding: 0 13px;
+    border-radius: 100px;
+}
+
+/* 设置内容区域的样式 */
+#content {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* 设置盒子的样式和动画效果 */
+.box {
+    box-shadow: 0 0 10px rgba(70, 70, 40, 0.255);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    width: 60%;
+    max-width: 300px;
+    border: 0;
+    margin: 8px 18px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    transform: translateY(-20px);
+    overflow: hidden;
+    transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1), transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.box.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.box.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.box:hover {
+    transform: scale(1.10);
+    box-shadow: 0 0 20px rgba(70, 70, 40, 0.5);
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), box-shadow 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* 设置盒子内链接的样式 */
+.box a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.box a:active {
+    transform: scale(0.95);
+}
+
+/* 设置URL的样式 */
+.url {
+    color: #696969;
+    height: 1.5em;
+    line-height: 1.5em;
+    width: 8em;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: auto;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-overflow: ellipsis;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* 设置图标遮罩的样式 */
+.icon-mask {
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    opacity: 20%;
+}
+
+/* 设置图标的大小 */
+.icon {
+    width: 150%;
+    height: 150%;
+}
+
+/* 设置组容器的外边距 */
+.group-container {
+    margin-bottom: 20px;
+}
+
+/* 设置组容器标题的样式和动画效果 */
+.group-container h4 {
+    margin-bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1), transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    font-weight: 300;
+    text-align: center;
+    position: relative;
+    color: #fafafa;
+}
+
+.group-container h4.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.group-container h4.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
